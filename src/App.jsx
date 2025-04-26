@@ -8,29 +8,15 @@ import {
 } from "./utility/PayPeriodHelper.js";
 import { useEffect } from "react";
 
-import PtoInfoInputs from "./components/UserPtoInput/UserPtoInput.jsx";
+import UserPtoInput from "./components/UserPtoInput/UserPtoInput.jsx";
+import PtoTextDisplay from "./components/PtoTextDisplay/PtoTextDisplay.jsx";
 
 function App() {
-  const {
-    currentPto,
-    setCurrentPto,
-    ptoRate,
-    setPtoRate,
-    timesAccured,
-    setTimesAccured,
-    availablePto,
-  } = usePTOContext();
-  const dateNow = new Date().toLocaleDateString("en-CA");
-  const [userDate, setUserDate] = useState(dateNow);
-
   return (
     <main>
       <div>
-        <PtoInfoInputs />
-        <div>
-          <h2>Hours at time of vacation: {availablePto}hr</h2>
-          <h2>Days at time of vacation: {Math.floor(availablePto / 8)} day</h2>
-        </div>
+        <PtoTextDisplay />
+        <UserPtoInput />
       </div>
     </main>
   );

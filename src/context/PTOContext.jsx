@@ -6,8 +6,8 @@ const PTOContext = createContext();
 
 export const PTOProvider = ({ children }) => {
   // User Input
-  const [currentPto, setCurrentPto] = useState(0);
-  const [ptoRate, setPtoRate] = useState(0);
+  const [currentPto, setCurrentPto] = useState();
+  const [ptoRate, setPtoRate] = useState();
   const [timesAccured, setTimesAccured] = useState(1);
 
   // Current Date
@@ -21,6 +21,8 @@ export const PTOProvider = ({ children }) => {
 
   // Calculate available PTO based on user input and current date
   useEffect(() => {
+    if (!currentPto || !ptoRate) return;
+
     setAvailablePto(
       ptoCalculator(Number(currentPto), Number(ptoRate), Number(timesAccured))
     );

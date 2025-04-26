@@ -1,17 +1,8 @@
 import React from "react";
 import { usePTOContext } from "../../context/PTOContext.jsx";
 
-function PtoInfoInputs() {
-  const {
-    currentPto,
-    setCurrentPto,
-    ptoRate,
-    setPtoRate,
-    userDate,
-    setUserDate,
-  } = usePTOContext();
-
-  const dateNow = new Date().toLocaleDateString("en-CA");
+function UserPtoInput() {
+  const { currentPto, setCurrentPto, ptoRate, setPtoRate } = usePTOContext();
 
   return (
     <div>
@@ -19,7 +10,7 @@ function PtoInfoInputs() {
         <label for="currentPto">Current PTO</label>
         <input
           id="currentPto"
-          placeholder="Current pto"
+          placeholder="32.00"
           type="number"
           value={currentPto}
           onChange={(e) => setCurrentPto(e.target.value)}
@@ -29,19 +20,14 @@ function PtoInfoInputs() {
         <label for="ptoRate">PTO rate</label>
         <input
           id="ptoRate"
-          placeholder="Pto rate"
+          placeholder="4.77"
           type="number"
           value={ptoRate}
           onChange={(e) => setPtoRate(e.target.value)}
         ></input>
       </div>
-      <input
-        type="date"
-        value={userDate}
-        onChange={(e) => setUserDate(e.target.value)}
-      />
     </div>
   );
 }
 
-export default PtoInfoInputs;
+export default UserPtoInput;
