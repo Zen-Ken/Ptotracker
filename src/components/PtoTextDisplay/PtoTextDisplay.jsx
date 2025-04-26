@@ -1,6 +1,6 @@
 import React from "react";
 import { usePTOContext } from "../../context/PTOContext";
-import DatePicker from "../DatePicker/DatePicker";
+import DatePickInput from "../DatePickInput/DatePickInput";
 
 function PtoTextDisplay() {
   const { availablePto } = usePTOContext();
@@ -9,7 +9,7 @@ function PtoTextDisplay() {
     <div>
       <h1 style={{ fontSize: "2rem", textAlign: "center" }}>
         You'll have {Math.floor(availablePto / 8)} days or {availablePto} hours
-        by <DatePicker />
+        by <DatePickInput />
       </h1>
     </div>
   );

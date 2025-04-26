@@ -1,6 +1,8 @@
 import React from "react";
 import { usePTOContext } from "../../context/PTOContext.jsx";
 
+// import styles from "./UserPtoInput.module.css";
+
 function UserPtoInput() {
   const { currentPto, setCurrentPto, ptoRate, setPtoRate } = usePTOContext();
 
@@ -12,6 +14,7 @@ function UserPtoInput() {
           id="currentPto"
           placeholder="32.00"
           type="number"
+          style={{ appearance: "textfield" }}
           value={currentPto}
           onChange={(e) => setCurrentPto(e.target.value)}
         ></input>
