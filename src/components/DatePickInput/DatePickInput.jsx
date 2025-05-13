@@ -10,7 +10,11 @@ export default function DatePickInput() {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DatePicker />
+      <DatePicker
+        label="Vacation Day"
+        value={userDate}
+        onChange={(e) => setUserDate(e)}
+      />
     </LocalizationProvider>
   );
 }

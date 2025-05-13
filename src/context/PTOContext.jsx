@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import dayjs from "dayjs";
 
 import ptoCalculator from "../services/ptoCalculatorServices";
 import { countSemiMonthlyPaychecks } from "../utility/PayPeriodHelper.js";
@@ -12,7 +13,7 @@ export const PTOProvider = ({ children }) => {
   const [timesAccured, setTimesAccured] = useState(1);
 
   // Current Date
-  const dateNow = new Date().toLocaleDateString("en-CA");
+  const dateNow = dayjs();
 
   // User target date to calculate available PTO
   const [userDate, setUserDate] = useState(dateNow);

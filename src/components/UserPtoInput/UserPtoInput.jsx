@@ -1,4 +1,5 @@
 import React from "react";
+import { TextField } from "@mui/material";
 import { usePTOContext } from "../../context/PTOContext.jsx";
 
 // import styles from "./UserPtoInput.module.css";
@@ -9,25 +10,23 @@ function UserPtoInput() {
   return (
     <div>
       <div>
-        <label for="currentPto">Current PTO</label>
-        <input
-          id="currentPto"
-          placeholder="32.00"
+        <TextField
+          label="Current PTO"
           type="number"
-          style={{ appearance: "textfield" }}
+          variant="outlined"
           value={currentPto}
           onChange={(e) => setCurrentPto(e.target.value)}
-        ></input>
+        />
       </div>
       <div>
-        <label for="ptoRate">PTO rate</label>
-        <input
-          id="ptoRate"
-          placeholder="4.77"
+        <TextField
+          label="Pto Rate"
+          helperText="How many hours do you earn per pay period?"
           type="number"
+          variant="outlined"
           value={ptoRate}
           onChange={(e) => setPtoRate(e.target.value)}
-        ></input>
+        />
       </div>
     </div>
   );
